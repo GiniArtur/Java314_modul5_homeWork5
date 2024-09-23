@@ -26,12 +26,12 @@ public class Edit extends HttpServlet {
             e.printStackTrace();
         }
 
-        String query = "update users set username = ?, user_password = ? where id = ?";
+        String query = "update usersHomeWork5 set username = ?, userPassword = ? where id = ?";
         out.println("<html><body>");
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hw5_users", "study", "1234")){
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/usersHomeWork5", "root", "4544120")){
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, req.getParameter("username"));
-            preparedStatement.setString(2, req.getParameter("user_password"));
+            preparedStatement.setString(2, req.getParameter("userPassword"));
             preparedStatement.setInt(3, Integer.parseInt(req.getParameter("id")));
             int rows = preparedStatement.executeUpdate();
             if (rows > 0) {

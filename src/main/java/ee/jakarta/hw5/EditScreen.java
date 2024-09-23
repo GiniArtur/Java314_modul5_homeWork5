@@ -25,8 +25,8 @@ public class EditScreen extends HttpServlet {
         }
 
         out.println("<html><head><link rel='stylesheet' href='css/style.css'></head><body><div class='list'>");
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hw5_users", "study", "1234")) {
-            String query = "select username, user_password from users where id = ?";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/usersHomeWork5", "root", "4544120")) {
+            String query = "select username, userPassword from usersHomeWork5 where id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -40,7 +40,7 @@ public class EditScreen extends HttpServlet {
 
             out.println("<tr>");
             out.println("<td>Пароль</td>");
-            out.printf("<td><input type='text' name='user_password' value='%s'</td>\n", resultSet.getString(2));
+            out.printf("<td><input type='text' name='userPassword' value='%s'</td>\n", resultSet.getString(2));
             out.println("</tr>");
 
             out.println("<tr>");

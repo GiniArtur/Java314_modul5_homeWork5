@@ -24,8 +24,8 @@ public class UserList extends HttpServlet {
         }
 
         PrintWriter out = response.getWriter();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hw5_users", "study", "1234")) {
-            String query = "select id, username, user_password from users;";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/usersHomeWork5", "root", "4544120")) {
+            String query = "select id, username, userPassword from usersHomeWork5;";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             out.println("<html><body>");

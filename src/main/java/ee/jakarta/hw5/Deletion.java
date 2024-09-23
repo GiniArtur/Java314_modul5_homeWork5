@@ -29,8 +29,8 @@ public class Deletion extends HttpServlet {
         }
 
         out.println("<html><body>");
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hw5_users", "study", "1234")) {
-            String query = "DELETE FROM users WHERE id = ?";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/usersHomeWork5", "root", "4544120")) {
+            String query = "DELETE FROM usersHomeWork5 WHERE id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, id);
             int rows = preparedStatement.executeUpdate();

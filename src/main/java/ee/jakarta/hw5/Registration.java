@@ -30,8 +30,8 @@ public class Registration extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hw5_users", "study", "1234")){
-            String query = "insert into users (username, user_password) values (?, ?)";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/usersHomeWork5", "root", "4544120")){
+            String query = "insert into usersHomeWork5 (username, userPassword) values (?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
